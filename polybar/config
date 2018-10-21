@@ -1,0 +1,242 @@
+[bar/top]
+
+#----------------------------------------DIMENSIONS
+
+width = 100%
+height = 30
+offset-x = 0
+offset-y = 0
+
+# polybar background color
+background = #31363a
+
+# Font color
+foreground = #FFF
+
+spacing = 1
+
+border-top-size = 0
+border-bottom-size = 0
+border-right-size = 0
+border-left-size = 0
+
+;----------;
+; LOCATION ;
+;----------;
+
+bottom = false
+monitor = eDP-1
+# wm-restack = none
+override-redirect = false
+
+;-------;
+; FONTS ;
+;-------;
+
+font-0 = System San Francisco:size=12;3
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=15;3"
+
+;---------------;
+; MISCELLANEOUS ;
+;---------------;
+
+fixed-center = true
+padding-left = 2
+padding-right = 2
+module-margin = 2
+
+modules-left = volume backlight cpu temperature memory
+# mpd
+modules-center = i3
+modules-right = battery wlan date time powermenu
+
+tray-position = right
+#tray-detached = true
+
+[bar/mpd]
+;------------;
+; DIMENSIONS ;
+;------------;
+
+width = 100%
+height = 20
+offset-y = 0
+offset-x = 0
+
+border-top-size = 10
+border-bottom-size = 0
+border-right-size = 10
+border-left-size = 10
+
+;----------;
+; LOCATION ;
+;----------;
+
+bottom = true
+monitor = eDP-1
+wm-restack = none
+override-redirect = false
+
+;-------;
+; FONTS ;
+;-------;
+
+font-0 = Hack:size=10;3
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=10;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=10;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=10;3"
+
+;--------;
+; COLORS ;
+;--------;
+
+background = #ffffff
+foreground = #ffffff
+border-color = #ffffff
+
+;---------------;
+; MISCELLANEOUS ;
+;---------------;
+
+fixed-center = true
+padding-left = 2 
+padding-right = 2
+module-margin = 1.5
+
+;modules-left = 
+# modules-center = mpd
+;modules-right = 
+
+
+;---------;
+; MODULES ;
+;---------;
+time
+[module/i3]
+type = internal/i3
+
+#pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+enable-scroll = false
+
+
+# label-focused-foreground = #ff0000
+label-focused-background = #55000000
+label-focused-padding = 4
+
+label-unfocused-background = #aa000000
+label-unfocused-padding = 4
+
+label-urged-padding = 4
+
+
+[module/time]
+type = internal/date
+interval = 1.0
+date =  %H:%M:%S   |
+
+[module/date]
+type = internal/date
+date =  %A, %d.%m
+label = %date%
+
+
+[module/battery]
+type = internal/battery
+full-at = 95
+battery = BAT0
+adapter = ADP0
+poll-interval = 5
+
+label-discharging = %percentage%%
+label-charging = %percentage%%
+label-full = Fully charged
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-charging =  <label-charging>
+format-full = <ramp-capacity> <label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+[module/volume]
+type = internal/alsa
+
+format-volume = <ramp-volume> <label-volume>
+format-muted =  0%
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+[module/mpd]
+type = internal/mpd
+
+label-offline = mpd is offline
+format-online = <icon-prev> <toggle> <icon-next> <label-song>
+format-offline = <label-offline>
+host = 127.0.0.1
+port = 6600
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+bar-progress-width = 10
+bar-progress-indicator = |
+bar-progress-fill = ─
+bar-progress-empty = ─
+
+[module/backlight]
+type = internal/backlight
+
+# Use the following command to list available cards:
+# $ ls -1 /sys/class/backlight/
+card = intel_backlight
+format = <ramp> <label>
+label = %percentage%%
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 5
+label-connected =   %essid%  |   %downspeed%
+label-disconnected =  Not Connected
+
+[module/cpu]
+type = internal/cpu
+label =  %percentage%%
+
+[module/memory]
+type = internal/memory
+label =  %gb_used%
+interval = 3
+
+[module/temperature]
+type = internal/temperature
+interval = 1
+
+
+[module/network]
+type = internal/network
+interface = wlp2s0
+label-connected =  %downspeed% |  %upspeed%
+
+[bar/float]
+inherit = bar/top
+background = #ffffff
+tray-position = center
