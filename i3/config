@@ -176,6 +176,9 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle		# mute 
 bindsym XF86MonBrightnessDown   exec "light -U 5; notify-send 'brightness down'"
 bindsym XF86MonBrightnessUp     exec "light -A 5; notify-send 'brightness up'"
 
+# Screenshot  
+bindsym $mod+Print exec scrot -e 'mv $f ~/Pictures/Screenshots'
+
 # Gaps
 gaps inner 10
 gaps outer 0
