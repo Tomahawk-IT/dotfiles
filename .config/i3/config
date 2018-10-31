@@ -119,7 +119,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "~/.config/i3/rofi-powermenu.sh"
+bindsym $mod+Shift+e exec "~/.dotfiles/scripts/rofi-powermenu.sh"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -199,9 +199,13 @@ client.focused           #        #        #        #ffffff  #ffffff
 # client.background        #000000
 
 
-#--------------------------------------------------- GIMP WINDOWS
+# per application window settings
 
+# Gimp
 for_window [class="^Gimp$" title="^GNU Image Manipulation Program$"] floating disabled
 for_window [class="^Gimp$" title=" ? GIMP$"] floating disabled
 for_window [class="^Gimp$" title="Tool Options$"] floating enable
 for_window [class="^Gimp$" title="^Quit GIMP$"] floating enable
+
+# Terminator
+for_window [class="^Terminator$" title="^Terminator Preferences$"] floating enable
