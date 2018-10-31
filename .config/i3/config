@@ -199,12 +199,9 @@ client.focused           #        #        #        #ffffff  #ffffff
 # client.background        #000000
 
 
-# per application window settings
+#--------------------------------------------------- GIMP WINDOWS
 
 for_window [class="^Gimp$" title="^GNU Image Manipulation Program$"] floating disabled
 for_window [class="^Gimp$" title=" ? GIMP$"] floating disabled
 for_window [class="^Gimp$" title="Tool Options$"] floating enable
 for_window [class="^Gimp$" title="^Quit GIMP$"] floating enable
-
-# Terminator
-for_window [class="^Terminator$" title="^Terminator Preferences$"] floating enable
