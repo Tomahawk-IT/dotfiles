@@ -105,11 +105,6 @@ padding-left = 2
 padding-right = 2
 module-margin = 1.5
 
-;modules-left = 
-# modules-center = mpd
-;modules-right = 
-
-
 ;---------;
 ; MODULES ;
 ;---------;
@@ -124,10 +119,10 @@ enable-scroll = false
 
 
 # label-focused-foreground = #ff0000
-label-focused-background = #55000000
+label-focused-background = #ff000000
 label-focused-padding = 4
 
-label-unfocused-background = #aa000000
+label-unfocused-background = #00000000
 label-unfocused-padding = 4
 
 label-urged-padding = 4
