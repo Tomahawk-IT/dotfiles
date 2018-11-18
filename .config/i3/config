@@ -19,7 +19,7 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show run -font "hack 12" -lines 10 -width 20
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -161,7 +161,7 @@ exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 exec --no-startup-id polybar top
 exec --no-startup-id nm-applet
 exec_always --no-startup-id dunst
-exec --no-startup-id unclutter
+# exec --no-startup-id unclutter
 
 # Window border settings
 new_window pixel 1
@@ -210,3 +210,10 @@ for_window [class="^Gimp$" title="^Quit GIMP$"] floating enable
 
 # Terminator
 for_window [class="^Terminator$" title="^Terminator Preferences$"] floating enable
+
+# Chrome
+for_window [class="^Google-chrome$"] border none
+
+#TODO: FIX?
+# nm-applet
+for_window [class="^nm-connection-editor$" title="^Network Connections$"] floating enable

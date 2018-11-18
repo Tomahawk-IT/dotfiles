@@ -8,7 +8,7 @@ offset-x = 0
 offset-y = 0
 
 # polybar background color
-background = #31363a
+background = #15161a
 
 # Font color
 foreground = #FFF

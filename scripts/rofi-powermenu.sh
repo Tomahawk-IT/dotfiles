@@ -7,9 +7,9 @@ logout_command="i3-msg exit"
 hibernate_command="systemctl hibernate"
 suspend_command="systemctl suspend"
 
-rofi_command="rofi -width 15 -lines 3"
+rofi_command="rofi -width 10 -lines 3"
 
-# Since I don't ever suspend or hibernate my laptop
+# Since I use only those 3 options
 options=$'poweroff\nreboot\nlogout' 
 
 # ... because the essential options (-dmenu and -p) are added here
