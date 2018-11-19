@@ -217,3 +217,6 @@ for_window [class="^Google-chrome$"] border none
 #TODO: FIX?
 # nm-applet
 for_window [class="^nm-connection-editor$" title="^Network Connections$"] floating enable
+
+# Virtual Box
+for_window [class="^VirtualBox Manager$"] floating enable
